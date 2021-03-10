@@ -1,0 +1,30 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList<RssReader.Models.ImgItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="margin: auto;">An Image Gallery</h2>
+<link rel="stylesheet" href="~/Content/Style.css" />
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6">
+            <div class="card ">
+                <img src="@item.Urls.Thumb"/>
+                <div class="card-footer">
+                    <h5>@item.Created_At</h5>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="pager-container">
+    @Html.PagedListPager(Model, pageNum => Url.Action("Index", new { pageNum }));
+</div>
+

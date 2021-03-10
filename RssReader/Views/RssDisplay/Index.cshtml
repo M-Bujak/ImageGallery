@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<RssReader.Models.ImgItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>RSS Reader</h2>
+@*<form action="Index" method="GET">
+    <input type="text" name="url" placeholder="RSS address" />
+    <button type="submit">Go!</button>
+</form>*@
+
+@using (Html.BeginForm("Index", "RssDisplay", FormMethod.Get))
+{
+    <div class="form-group">
+        <input type="text" name="url" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">GET RSS</button>
+}
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6">
+            <img src="@item.Urls.Regular"/>
+        </div>
+    }
+
+</div>
+

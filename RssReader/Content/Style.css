@@ -1,0 +1,25 @@
+﻿body {
+    background-color: darkgray;
+}
+
+h2 {
+    font-family: Bahnschrift;
+    color: white;
+}
+
+.card-container {
+}
+
+.card {
+    margin: 15px;
+    border-radius: 10px;
+    background-color:white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition:0.3s;
+    padding: 0px;
+}
+
+.card-footer {
+    padding: 2px 16px;
+}
+
